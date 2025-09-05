@@ -1,13 +1,10 @@
- .hallo {
+ p {
         font-weight: bold;
     }
-    .oke{
+    img{
         width: 500px;
         border-radius: 150px;
         height: 100px;
-    }
-    .link{ 
-        float: right;
     }
     ul { 
         background-color: cadetblue;
