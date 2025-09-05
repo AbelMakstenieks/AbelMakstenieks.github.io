@@ -35,6 +35,8 @@ ul {
   height: 100%;
   position: fixed;
   overflow: auto;
+  top: 0;
+  left: 0;
 }
 
 li a {

@@ -1,674 +1,287 @@
 <!DOCTYPE html>
-<html lang="nl">
-<head>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Zeeslag</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* --- Alleen game elementen --- */
+      .game-container {
+        margin-left: 230px;
+        padding: 20px;
+        max-width: 700px;
+      }
+
+      .game-box {
+        background: #fff8ef;
+        border: 2px solid #612b12;
+        border-radius: 16px;
+        padding: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        text-align: center;
+      }
+
+      /* Titel */
+      .game-box h1 {
+        margin-top: 0;
+        font-size: 28px;
+        color: #612b12;
+        text-shadow: 1px 1px #dabc8a;
+      }
+
+      /* Controls */
+      .game-box .controls {
+        margin: 15px 0;
+      }
+      .game-box .controls select,
+      .game-box .controls button {
+        padding: 8px 12px;
+        border-radius: 8px;
+        border: 1px solid #612b12;
+        background: #dabc8a;
+        font-weight: bold;
+        cursor: pointer;
+        transition: background 0.3s;
+      }
+      .game-box .controls button:hover,
+      .game-box .controls select:hover {
+        background: #c49b6e;
+      }
+
+      /* Bord */
+      .game-box .board {
+        display: grid;
+        gap: 2px;
+        justify-content: center;
+        margin: 20px auto;
+      }
+      .game-box .cell {
+        background-color: #dabc8a;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        border: 1px solid #612b12;
+        font-weight: bold;
+        font-size: 18px;
+        transition: transform 0.3s, background-color 0.3s;
+        border-radius: 6px;
+      }
+      .game-box .hit {
+        background-color: red;
+        color: white;
+        transform: scale(1.2);
+      }
+      .game-box .miss {
+        background-color: lightblue;
+        transform: scale(1.1);
+      }
+      .game-box .sunk {
+        background-color: darkred;
+        color: white;
+        animation: pulse 0.6s ease infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.2);
+        }
+        100% {
+          transform: scale(1);
+        }
+      }
+
+      /* Status en schepen */
+      .game-box .status {
+        margin-top: 15px;
+        font-weight: bold;
+        font-size: 20px;
+        min-height: 30px;
+        color: #612b12;
+      }
+      .game-box .ship-count {
+        font-size: 18px;
+        margin-top: 10px;
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <ul>
       <li><a href="home.html">Home</a></li>
       <li><a href="index.html">Profile</a></li>
-      <li><a class="active" href="chatgpt.html">chatgpt game</a></li>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Schaakspel – één HTML-bestand</title>
-  <style>
-    div{
-      margin-left: 230px;
-    }
-    :root{
-      --cell: 72px;
-      --light: #f2e9e4;
-      --dark: #9a8c98;
-      --accent: #4f46e5;
-      --accent-soft: rgba(79,70,229,.15);
-      --danger: #dc2626;
-      --ok: #16a34a;
-      --ink: #1f2937;
-      --bg: #fafafa;
-      --shadow: 0 10px 25px rgba(0,0,0,.08);
-    }
-    html,body{height:100%;}
-    body{
-      margin:0; padding:24px; font-family: ui-sans-serif, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
-      background: var(--bg); color: var(--ink);
-      display:flex; align-items:center; justify-content:center;
-    }
-    .app{display:grid; gap:20px; grid-template-columns: 1fr auto; align-items:start; width: min(1100px, 100%);}
-    .panel{
-      background:#fff; border-radius:20px; box-shadow: var(--shadow); padding:18px;
-    }
-    .board-wrap{display:grid; gap:14px;}
-    .topbar{display:flex; align-items:center; justify-content:space-between; gap:12px;}
-    .topbar .side{display:flex; align-items:center; gap:10px; font-weight:600}
-    .turn-dot{width:10px; height:10px; border-radius:50%; background:var(--accent); box-shadow:0 0 0 4px var(--accent-soft);} 
-    .controls{display:flex; gap:8px; flex-wrap:wrap}
-    button{
-      appearance:none; border:1px solid #e5e7eb; background:#fff; color:#111827; padding:10px 14px; border-radius:12px; cursor:pointer; font-weight:600;
-      box-shadow:var(--shadow);
-    }
-    button:hover{border-color:#c7cad1}
-    button:disabled{opacity:.55; cursor:not-allowed}
+      <li><a class="active" href="chatgpt.html">Zeeslag</a></li>
+    </ul>
 
-    .board{ 
-      width: calc(var(--cell) * 8); height: calc(var(--cell) * 8);
-      display:grid; grid-template-columns: repeat(8, var(--cell)); grid-template-rows: repeat(8, var(--cell));
-      border-radius:16px; overflow:hidden; box-shadow: var(--shadow);
-      position:relative; user-select:none; touch-action: manipulation;
-    }
-    .square{ display:flex; align-items:center; justify-content:center; font-size: 42px; }
-    .light{ background: var(--light); }
-    .dark{ background: var(--dark); color:#111; }
-
-    .piece{ font-size: 42px; line-height:1; pointer-events:none; }
-    .ghost{ outline: 3px dashed var(--accent); outline-offset: -6px; }
-
-    .hint{ position:absolute; width:18px; height:18px; border-radius:50%; background: rgba(0,0,0,.18); }
-    .hint.capture{ width:calc(var(--cell)); height:calc(var(--cell)); border-radius:0; background: rgba(220,38,38,.18); }
-
-    .coords{ position:absolute; inset:0; pointer-events:none; }
-    .alfa, .numer{ position:absolute; font-size:12px; color:#11182799; }
-
-    .alfa{ bottom:6px; right:8px; }
-    .numer{ top:6px; left:8px; }
-
-    .sidecard{ width: 320px; display:grid; gap:16px; }
-    .card{ background:#fff; border-radius:20px; box-shadow:var(--shadow); padding:16px; }
-    .status{ display:flex; align-items:center; gap:10px; font-weight:700; }
-    .status.ok{ color: var(--ok); }
-    .status.warn{ color: var(--danger); }
-
-    .moves{ max-height: 420px; overflow:auto; border:1px solid #eef2f7; border-radius:12px; padding:12px; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
-    .moves b{ color:#6b7280 }
-    .moves .ply{ padding:4px 6px; border-radius:8px; }
-    .moves .ply.active{ background: #eef2ff; }
-
-    .fen{ display:grid; gap:8px; }
-    input[type="text"]{ width:100%; padding:10px 12px; border-radius:12px; border:1px solid #e5e7eb; font-size:14px; }
-
-    .promo-backdrop{ position:fixed; inset:0; background: rgba(0,0,0,.4); display:none; align-items:center; justify-content:center; z-index:5; }
-    .promo{ background:#fff; padding:20px; border-radius:16px; box-shadow: var(--shadow); display:grid; gap:10px; }
-    .promo h3{ margin:0; }
-    .promo .opts{ display:flex; gap:10px; justify-content:center; }
-    .promo .opt{ font-size:42px; padding:10px 14px; border:1px solid #e5e7eb; border-radius:12px; cursor:pointer; }
-
-    @media (max-width: 1020px){
-      .app{ grid-template-columns: 1fr; }
-      .sidecard{ width: 100%; }
-      :root{ --cell: 56px; }
-    }
-  </style>
-</head>
-<body>
-  <div class="app">
-    <div class="panel board-wrap">
-      <div class="topbar">
-        <div class="side"><span class="turn-dot" id="turnDot"></span> Aan zet: <span id="turnText">Wit</span></div>
+    <!-- GAME CONTENT -->
+    <div class="game-container">
+      <div class="game-box">
+        <h1>Zeeslag</h1>
         <div class="controls">
-          <button id="newGame">Nieuw spel</button>
-          <button id="undoBtn" disabled>Undo</button>
-          <button id="flipBtn">Draai bord</button>
+          Bord grootte:
+          <select id="boardSize">
+            <option value="8" selected>8x8</option>
+            <option value="10">10x10</option>
+          </select>
+          <button id="resetBtn">Reset Spel</button>
         </div>
+        <div class="ship-count" id="shipCount"></div>
+        <div class="board" id="board"></div>
+        <div class="status" id="status">Zet een schot...</div>
       </div>
-      <div class="board" id="board"></div>
     </div>
 
-    <div class="sidecard">
-      <div class="card">
-        <div id="status" class="status ok">Klaar voor start! ✨</div>
-      </div>
-      <div class="card fen">
-        <label for="fenIn"><b>FEN laden</b></label>
-        <input id="fenIn" type="text" placeholder="bv. rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1"/>
-        <div class="controls">
-          <button id="loadFen">Laad FEN</button>
-          <button id="copyFen">Kopieer FEN</button>
-        </div>
-      </div>
-      <div class="card">
-        <div style="display:flex;align-items:center;justify-content:space-between;gap:8px; margin-bottom:8px;">
-          <b>Zetgeschiedenis</b>
-          <small id="plyCount">0 zetten</small>
-        </div>
-        <div class="moves" id="moves"></div>
-      </div>
-    </div>
-  </div>
+    <script>
+      const boardEl = document.getElementById("board");
+      const statusEl = document.getElementById("status");
+      const shipCountEl = document.getElementById("shipCount");
+      const resetBtn = document.getElementById("resetBtn");
+      const boardSizeSelect = document.getElementById("boardSize");
 
-  <div class="promo-backdrop" id="promoModal" role="dialog" aria-modal="true">
-    <div class="promo">
-      <h3>Kies promotie</h3>
-      <div class="opts">
-        <div class="opt" data-promo="q">♕</div>
-        <div class="opt" data-promo="r">♖</div>
-        <div class="opt" data-promo="b">♗</div>
-        <div class="opt" data-promo="n">♘</div>
-      </div>
-    </div>
-  </div>
+      let size, ships, hits, totalShips;
 
-<script>
-(() => {
-  // ========================
-  // Utils & Data structures
-  // ========================
-  const U = {
-    clone: (obj) => JSON.parse(JSON.stringify(obj)),
-    sqToIdx: (sq) => ({ r: 8 - Number(sq[1]), f: sq.charCodeAt(0) - 97 }),
-    idxToSq: (r,f) => String.fromCharCode(97+f) + (8 - r),
-    inBounds: (r,f) => r>=0 && r<8 && f>=0 && f<8,
-  };
+      function initGame() {
+        boardEl.innerHTML = "";
+        size = parseInt(boardSizeSelect.value);
+        hits = 0;
+        ships = [];
+        const shipSizes = [4, 3, 3, 2, 2, 1]; // vaste schepen van verschillende groottes
+        totalShips = shipSizes.length;
 
-  const START_FEN = "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1";
+        for (let sz of shipSizes) placeShip(sz);
 
-  const PIECE_CHAR = {
-    'w': { k:'\u2654', q:'\u2655', r:'\u2656', b:'\u2657', n:'\u2658', p:'\u2659' },
-    'b': { k:'\u265A', q:'\u265B', r:'\u265C', b:'\u265D', n:'\u265E', p:'\u265F' }
-  };
+        boardEl.style.gridTemplateColumns = `repeat(${size}, 40px)`;
+        boardEl.style.gridTemplateRows = `repeat(${size}, 40px)`;
 
-  function emptyBoard(){ return Array.from({length:8}, () => Array(8).fill(null)); }
-
-  function parseFEN(fen){
-    const [pieces, turn, castling, ep, halfmove, fullmove] = fen.trim().split(/\s+/);
-    const board = emptyBoard();
-    let r=0, f=0;
-    for(const ch of pieces){
-      if(ch === '/') { r++; f=0; continue; }
-      if(/\d/.test(ch)) { f += Number(ch); continue; }
-      const color = ch === ch.toUpperCase() ? 'w' : 'b';
-      const type = ch.toLowerCase();
-      board[r][f] = { type, color };
-      f++;
-    }
-    const state = {
-      turn: turn === 'w' ? 'w' : 'b',
-      castling: {
-        w: { K: castling.includes('K'), Q: castling.includes('Q') },
-        b: { K: castling.includes('k'), Q: castling.includes('q') }
-      },
-      enPassant: ep === '-' ? null : ep,
-      halfmove: Number(halfmove)||0,
-      fullmove: Number(fullmove)||1
-    };
-    return {board, state};
-  }
-
-  function toFEN(board, state){
-    let pieces = '';
-    for(let r=0;r<8;r++){
-      let empty=0;
-      for(let f=0; f<8; f++){
-        const p = board[r][f];
-        if(!p) { empty++; continue; }
-        if(empty){ pieces += empty; empty=0; }
-        const ch = p.type;
-        pieces += p.color==='w' ? ch.toUpperCase() : ch;
-      }
-      if(empty) pieces += empty;
-      if(r<7) pieces += '/';
-    }
-    let c = '';
-    if(state.castling.w.K) c+='K';
-    if(state.castling.w.Q) c+='Q';
-    if(state.castling.b.K) c+='k';
-    if(state.castling.b.Q) c+='q';
-    if(!c) c='-';
-    const ep = state.enPassant || '-';
-    return `${pieces} ${state.turn} ${c} ${ep} ${state.halfmove||0} ${state.fullmove||1}`;
-  }
-
-  // ========================
-  // Move generation (legal)
-  // ========================
-  function kingSquare(board, color){
-    for(let r=0;r<8;r++) for(let f=0;f<8;f++){
-      const p=board[r][f]; if(p && p.color===color && p.type==='k') return {r,f};
-    }
-    return null;
-  }
-
-  function attackedBy(board, color, targetR, targetF){
-    // Check knight attacks
-    const N = [[-2,-1],[-2,1],[-1,-2],[-1,2],[1,-2],[1,2],[2,-1],[2,1]];
-    for(const [dr,df] of N){
-      const r=targetR+dr, f=targetF+df; if(!U.inBounds(r,f)) continue; const p=board[r][f];
-      if(p && p.color===color && p.type==='n') return true;
-    }
-    // King attacks
-    for(let dr=-1; dr<=1; dr++) for(let df=-1; df<=1; df++) if(dr||df){
-      const r=targetR+dr, f=targetF+df; if(!U.inBounds(r,f)) continue; const p=board[r][f];
-      if(p && p.color===color && p.type==='k') return true;
-    }
-    // Pawn attacks
-    const dir = color==='w' ? -1 : 1;
-    for(const df of [-1,1]){
-      const r=targetR+dir, f=targetF+df; if(!U.inBounds(r,f)) continue; const p=board[r][f];
-      if(p && p.color===color && p.type==='p') return true;
-    }
-    // Sliding pieces
-    function ray(dirs, types){
-      for(const [dr,df] of dirs){
-        let r=targetR+dr, f=targetF+df;
-        while(U.inBounds(r,f)){
-          const p=board[r][f];
-          if(p){ if(p.color===color && types.includes(p.type)) return true; break; }
-          r+=dr; f+=df;
-        }
-      }
-    }
-    ray([[1,0],[-1,0],[0,1],[0,-1]],[ 'r','q' ]);
-    ray([[1,1],[1,-1],[-1,1],[-1,-1]],[ 'b','q' ]);
-    return false;
-  }
-
-  function isInCheck(board, color){
-    const k = kingSquare(board, color);
-    return attackedBy(board, color==='w'?'b':'w', k.r, k.f);
-  }
-
-  function genPseudoMoves(board, state, r, f){
-    const p=board[r][f]; if(!p) return [];
-    const moves=[]; const color=p.color; const forward = color==='w' ? -1 : 1;
-    const enemy = color==='w' ? 'b':'w';
-
-    const push = (toR,toF, flags={}) => {
-      if(!U.inBounds(toR,toF)) return;
-      const tgt=board[toR][toF];
-      if(flags.type==='normal'){
-        if(!tgt) moves.push({from:{r,f}, to:{r:toR,f:toF}, piece:p, ...flags});
-      } else if(flags.type==='capture'){
-        if(tgt && tgt.color===enemy) moves.push({from:{r,f}, to:{r:toR,f:toF}, piece:p, capture:tgt, ...flags});
-      } else {
-        moves.push({from:{r,f}, to:{r:toR,f:toF}, piece:p, ...flags});
-      }
-    };
-
-    switch(p.type){
-      case 'p': {
-        const startRank = color==='w'?6:1;
-        const promoRank = color==='w'?0:7;
-        // single push
-        if(!board[r+forward]?.[f]){
-          if(r+forward===promoRank){ ['q','r','b','n'].forEach(pr=>push(r+forward,f,{type:'promote', promotion:pr})); }
-          else push(r+forward,f,{type:'normal'});
-          // double
-          if(r===startRank && !board[r+2*forward]?.[f]) push(r+2*forward,f,{type:'double'});
-        }
-        // captures
-        for(const df of [-1,1]){
-          const tr=r+forward, tf=f+df; if(!U.inBounds(tr,tf)) continue;
-          const tgt=board[tr][tf];
-          if(tgt && tgt.color===enemy){
-            if(tr===promoRank){ ['q','r','b','n'].forEach(pr=>push(tr,tf,{type:'promote-capture', promotion:pr, capture:tgt})); }
-            else push(tr,tf,{type:'capture', capture:tgt});
+        for (let r = 0; r < size; r++) {
+          for (let c = 0; c < size; c++) {
+            const cell = document.createElement("div");
+            cell.className = "cell";
+            cell.dataset.row = r;
+            cell.dataset.col = c;
+            cell.addEventListener("click", shoot);
+            boardEl.appendChild(cell);
           }
         }
-        // en passant
-        if(state.enPassant){
-          const ep = U.sqToIdx(state.enPassant);
-          if(ep.r===r+forward && Math.abs(ep.f - f)===1){
-            const capR=r, capF=ep.f; // square of the pawn to capture
-            push(ep.r, ep.f, {type:'enpassant', capture:{...board[capR][capF]}});
-          }
-        }
-        break;
+
+        updateShipCount();
+        statusEl.textContent = "Zet een schot...";
       }
-      case 'n':{
-        const N=[[2,1],[2,-1],[-2,1],[-2,-1],[1,2],[1,-2],[-1,2],[-1,-2]];
-        for(const [dr,df] of N){
-          const tr=r+dr, tf=f+df; if(!U.inBounds(tr,tf)) continue; const tgt=board[tr][tf];
-          if(!tgt) push(tr,tf,{type:'normal'}); else if(tgt.color===enemy) push(tr,tf,{type:'capture', capture:tgt});
-        }
-        break;
-      }
-      case 'b': case 'r': case 'q':{
-        const dirs = [];
-        if(p.type!== 'r') dirs.push([1,1],[1,-1],[-1,1],[-1,-1]);
-        if(p.type!== 'b') dirs.push([1,0],[-1,0],[0,1],[0,-1]);
-        for(const [dr,df] of dirs){
-          let tr=r+dr, tf=f+df;
-          while(U.inBounds(tr,tf)){
-            const tgt=board[tr][tf];
-            if(!tgt) moves.push({from:{r,f}, to:{r:tr,f:tf}, piece:p, type:'normal'});
-            else { if(tgt.color===enemy) moves.push({from:{r,f}, to:{r:tr,f:tf}, piece:p, type:'capture', capture:tgt}); break; }
-            tr+=dr; tf+=df;
-          }
-        }
-        break;
-      }
-      case 'k':{
-        for(let dr=-1;dr<=1;dr++) for(let df=-1;df<=1;df++) if(dr||df){
-          const tr=r+dr, tf=f+df; if(!U.inBounds(tr,tf)) continue; const tgt=board[tr][tf];
-          if(!tgt) push(tr,tf,{type:'normal'}); else if(tgt.color===enemy) push(tr,tf,{type:'capture', capture:tgt});
-        }
-        // castling
-        if(color==='w' && r===6){ /* never true */ }
-        const side = color;
-        const backRank = color==='w'?7:0;
-        if(r===backRank && f===4){
-          // king side
-          if((side==='w'?state.castling.w.K:state.castling.b.K)){
-            if(!board[backRank][5] && !board[backRank][6]){
-              moves.push({from:{r,f}, to:{r:backRank,f:6}, piece:p, type:'castle', side:'K'});
+
+      function placeShip(length) {
+        let placed = false;
+        while (!placed) {
+          const r = Math.floor(Math.random() * size);
+          const c = Math.floor(Math.random() * size);
+          const horizontal = Math.random() < 0.5;
+          let coords = [];
+          for (let i = 0; i < length; i++) {
+            const nr = r + (horizontal ? 0 : i);
+            const nc = c + (horizontal ? i : 0);
+            if (nr >= size || nc >= size) {
+              coords = [];
+              break;
             }
+            coords.push(nr + "," + nc);
           }
-          // queen side
-          if((side==='w'?state.castling.w.Q:state.castling.b.Q)){
-            if(!board[backRank][3] && !board[backRank][2] && !board[backRank][1]){
-              moves.push({from:{r,f}, to:{r:backRank,f:2}, piece:p, type:'castle', side:'Q'});
-            }
+          if (
+            coords.length === length &&
+            !coords.some((k) => ships.some((ship) => ship.includes(k)))
+          ) {
+            ships.push(coords);
+            placed = true;
           }
         }
-        break;
       }
-    }
-    return moves;
-  }
 
-  function makeMove(board, state, move){
-    const nb = U.clone(board); const ns = U.clone(state);
-    const {from,to,type,piece} = move;
-    // clear en passant by default
-    ns.enPassant = null;
+      function shoot(e) {
+        const cell = e.currentTarget;
+        const key = cell.dataset.row + "," + cell.dataset.col;
+        if (
+          cell.classList.contains("hit") ||
+          cell.classList.contains("miss") ||
+          cell.classList.contains("sunk")
+        )
+          return;
 
-    // move piece
-    nb[to.r][to.f] = U.clone(piece);
-    nb[from.r][from.f] = null;
+        let hitShip = ships.find((ship) => ship.includes(key));
+        if (hitShip) {
+          cell.classList.add("hit");
+          hits++;
+          statusEl.textContent = "🔥 Raak!";
+          animateHit(cell);
+          if (
+            hitShip.every((k) => {
+              const [r, c] = k.split(",");
+              return (
+                document
+                  .querySelector(`.cell[data-row='${r}'][data-col='${c}']`)
+                  .classList.contains("hit") ||
+                document
+                  .querySelector(`.cell[data-row='${r}'][data-col='${c}']`)
+                  .classList.contains("sunk")
+              );
+            })
+          ) {
+            hitShip.forEach((k) => {
+              const [r, c] = k.split(",");
+              const cellSunk = document.querySelector(
+                `.cell[data-row='${r}'][data-col='${c}']`
+              );
+              cellSunk.classList.remove("hit");
+              cellSunk.classList.add("sunk");
+            });
+            statusEl.textContent = "💥 Boot gezonken!";
+          }
+        } else {
+          cell.classList.add("miss");
+          statusEl.textContent = "🌊 Mis!";
+          animateMiss(cell);
+        }
 
-    // captures
-    if(type==='enpassant'){
-      const dir = piece.color==='w'?-1:1; // captured pawn behind target square
-      nb[to.r - dir][to.f] = null;
-    }
+        updateShipCount();
 
-    // promotion
-    if(type?.startsWith('promote')){
-      nb[to.r][to.f].type = move.promotion || 'q';
-    }
-
-    // double push -> set enPassant target
-    if(type==='double'){
-      const dir = piece.color==='w'?-1:1;
-      ns.enPassant = U.idxToSq(to.r - dir, to.f);
-    }
-
-    // castling: move rook too
-    if(type==='castle'){
-      const backRank = piece.color==='w'?7:0;
-      if(move.side==='K'){
-        // rook e.g. h1/h8 -> f1/f8
-        nb[backRank][5] = nb[backRank][7];
-        nb[backRank][7] = null;
-      } else {
-        nb[backRank][3] = nb[backRank][0];
-        nb[backRank][0] = null;
+        if (document.querySelectorAll(".sunk").length === ships.flat().length) {
+          statusEl.textContent =
+            "🎉 Gefeliciteerd! Alle schepen zijn gezonken!";
+        }
       }
-    }
 
-    // update castling rights
-    const c = ns.castling;
-    if(piece.type==='k'){
-      if(piece.color==='w'){ c.w.K=false; c.w.Q=false; }
-      else { c.b.K=false; c.b.Q=false; }
-    }
-    if(piece.type==='r'){
-      const backRank = piece.color==='w'?7:0;
-      if(from.r===backRank && from.f===0){ piece.color==='w' ? c.w.Q=false : c.b.Q=false; }
-      if(from.r===backRank && from.f===7){ piece.color==='w' ? c.w.K=false : c.b.K=false; }
-    }
-    // if a rook is captured on its original square, remove rights
-    if(move.capture && move.capture.type==='r'){
-      if(to.r===7 && to.f===0) c.w.Q=false;
-      if(to.r===7 && to.f===7) c.w.K=false;
-      if(to.r===0 && to.f===0) c.b.Q=false;
-      if(to.r===0 && to.f===7) c.b.K=false;
-    }
-
-    // clocks & turn
-    if(piece.type==='p' || move.capture) ns.halfmove = 0; else ns.halfmove = (ns.halfmove||0)+1;
-    if(piece.color==='b') ns.fullmove = (ns.fullmove||1)+1;
-    ns.turn = piece.color==='w' ? 'b' : 'w';
-
-    return {board: nb, state: ns};
-  }
-
-  function legalMoves(board, state, r, f){
-    const p=board[r][f]; if(!p || p.color!==state.turn) return [];
-    const pseudo = genPseudoMoves(board, state, r, f);
-    const enemy = p.color==='w'?'b':'w';
-    return pseudo.filter(m => {
-      // Special: castling cannot cross/check through attack
-      if(m.type==='castle'){
-        const backRank = p.color==='w'?7:0;
-        const path = m.side==='K' ? [[backRank,4],[backRank,5],[backRank,6]] : [[backRank,4],[backRank,3],[backRank,2]];
-        // squares must not be under attack
-        for(const [sr,sf] of path){ if(attackedBy(board, enemy, sr, sf)) return false; }
+      function updateShipCount() {
+        const remaining = ships.filter(
+          (ship) =>
+            !ship.every((k) =>
+              document
+                .querySelector(
+                  `.cell[data-row='${k.split(",")[0]}'][data-col='${
+                    k.split(",")[1]
+                  }']`
+                )
+                .classList.contains("sunk")
+            )
+        );
+        shipCountEl.textContent = `Schepen over: ${remaining.length} / ${totalShips}`;
       }
-      // Replay move on clone & test check
-      const {board: nb} = makeMove(board, state, m);
-      return !isInCheck(nb, p.color);
-    });
-  }
 
-  function allLegalMoves(board, state, color){
-    const list=[];
-    for(let r=0;r<8;r++) for(let f=0;f<8;f++){
-      const p=board[r][f]; if(!p || p.color!==color) continue;
-      const ms = legalMoves(board, state, r, f); list.push(...ms);
-    }
-    return list;
-  }
-
-  // ========================
-  // UI / Rendering
-  // ========================
-  const boardEl = document.getElementById('board');
-  const statusEl = document.getElementById('status');
-  const movesEl = document.getElementById('moves');
-  const turnText = document.getElementById('turnText');
-  const turnDot = document.getElementById('turnDot');
-  const fenIn = document.getElementById('fenIn');
-  const plyCount = document.getElementById('plyCount');
-
-  let game = { board: emptyBoard(), state: null, history: [], selected: null, flipped: false };
-
-  function setupBoard(){
-    boardEl.innerHTML = '';
-    for(let r=0;r<8;r++) for(let f=0;f<8;f++){
-      const s = document.createElement('div');
-      s.className = 'square ' + (((r+f)%2)?'dark':'light');
-      s.dataset.r = r; s.dataset.f = f;
-      s.addEventListener('click', onSquareClick);
-      boardEl.appendChild(s);
-    }
-    render();
-  }
-
-  function pieceChar(p){ return PIECE_CHAR[p.color][p.type]; }
-
-  function render(){
-    // squares
-    [...boardEl.children].forEach((s)=>{
-      const r = Number(s.dataset.r), f=Number(s.dataset.f);
-      const rf = game.flipped ? { r: 7-r, f: 7-f } : { r, f };
-      const p = game.board[rf.r][rf.f];
-      s.innerHTML = '';
-      if(p){
-        const el = document.createElement('div'); el.className='piece'; el.textContent = pieceChar(p); s.appendChild(el);
+      function animateHit(cell) {
+        cell.style.transform = "scale(1.3)";
+        setTimeout(() => (cell.style.transform = "scale(1)"), 300);
       }
-      s.classList.remove('ghost');
-    });
 
-    // coords overlay (only once)
-    if(!boardEl.querySelector('.coords')){
-      const layer = document.createElement('div'); layer.className='coords';
-      for(let r=0;r<8;r++) for(let f=0;f<8;f++){
-        const sq = boardEl.children[r*8+f];
-        const a = document.createElement('div'); a.className='alfa'; a.textContent = String.fromCharCode(97 + (game.flipped?7-f:f));
-        const n = document.createElement('div'); n.className='numer'; n.textContent = (game.flipped? r+1 : 8-r);
-        const wrap = document.createElement('div'); wrap.style.position='absolute'; wrap.style.width='var(--cell)'; wrap.style.height='var(--cell)';
-        wrap.style.left = `calc(${f} * var(--cell))`; wrap.style.top = `calc(${r} * var(--cell))`;
-        wrap.appendChild(a); wrap.appendChild(n); layer.appendChild(wrap);
+      function animateMiss(cell) {
+        cell.style.transform = "rotate(-10deg)";
+        setTimeout(() => (cell.style.transform = "rotate(10deg)"), 150);
+        setTimeout(() => (cell.style.transform = "rotate(0deg)"), 300);
       }
-      boardEl.appendChild(layer);
-    }
 
-    // turn indicator
-    turnText.textContent = game.state.turn==='w' ? 'Wit' : 'Zwart';
-    turnDot.style.background = game.state.turn==='w' ? '#4f46e5' : '#111827';
+      resetBtn.addEventListener("click", initGame);
+      boardSizeSelect.addEventListener("change", initGame);
 
-    // history
-    renderMoves();
-    fenIn.value = toFEN(game.board, game.state);
-  }
-
-  function renderMoves(){
-    const rows = [];
-    for(let i=0;i<game.history.length;i+=2){
-      const white = game.history[i] || ''; const black = game.history[i+1] || '';
-      rows.push(`<div><b>${Math.floor(i/2)+1}.</b> <span class="ply ${i===game.history.length-1?'active':''}">${white}</span> ${black?`<span class=\"ply ${i+1===game.history.length-1?'active':''}\">${black}</span>`:''}</div>`);
-    }
-    movesEl.innerHTML = rows.join('');
-    plyCount.textContent = `${game.history.length} zetten`;
-  }
-
-  function algebraic(move, checkTag=''){ // simple SAN-ish
-    const files='abcdefgh';
-    const from = U.idxToSq(move.from.r, move.from.f);
-    const to = U.idxToSq(move.to.r, move.to.f);
-    const p = move.piece.type;
-    const pieceLetter = {k:'K', q:'D', r:'T', b:'L', n:'P' /* Paard */, p:''}[p] || '';
-    let s='';
-    if(move.type==='castle' && move.side==='K') s='O-O';
-    else if(move.type==='castle' && move.side==='Q') s='O-O-O';
-    else{
-      const cap = move.capture || move.type==='enpassant';
-      if(p==='p' && cap) s += files[move.from.f] + 'x' + to;
-      else {
-        s += pieceLetter;
-        if(cap) s += 'x';
-        s += to;
-      }
-      if(move.type?.startsWith('promote')) s += '=' + ({q:'D',r:'T',b:'L',n:'P'}[move.promotion]||'D');
-    }
-    return s + checkTag;
-  }
-
-  function onSquareClick(e){
-    const el = e.currentTarget;
-    const r = Number(el.dataset.r), f = Number(el.dataset.f);
-    const rf = game.flipped ? { r: 7-r, f: 7-f } : { r, f };
-
-    if(game.selected){
-      const { r: sr, f: sf, moves } = game.selected;
-      // try move
-      const chosen = moves.find(m => m.to.r===rf.r && m.to.f===rf.f);
-      clearHints();
-      if(chosen){
-        // handle promotion picker if needed
-        if(chosen.type?.startsWith('promote')){ pendingPromotion = chosen; openPromotion(); return; }
-        playMove(chosen); return;
-      }
-      game.selected = null; render(); return;
-    }
-
-    const p = game.board[rf.r][rf.f];
-    if(!p || p.color!==game.state.turn) return;
-    const moves = legalMoves(game.board, game.state, rf.r, rf.f);
-    if(!moves.length) return;
-    game.selected = { r: rf.r, f: rf.f, moves };
-    el.classList.add('ghost');
-    showHints(moves);
-  }
-
-  function showHints(moves){
-    for(const m of moves){
-      const idx = game.flipped ? (7-m.to.r)*8 + (7-m.to.f) : m.to.r*8 + m.to.f;
-      const cell = boardEl.children[idx];
-      const dot = document.createElement('div'); dot.className = 'hint' + ((m.capture||m.type==='enpassant')?' capture':'');
-      cell.appendChild(dot);
-    }
-  }
-  function clearHints(){
-    [...boardEl.querySelectorAll('.hint')].forEach(n=>n.remove());
-    [...boardEl.querySelectorAll('.ghost')].forEach(n=>n.classList.remove('ghost'));
-  }
-
-  function updateStatus(){
-    const color = game.state.turn; const enemy = color==='w'?'b':'w';
-    const inCheck = isInCheck(game.board, color);
-    const moves = allLegalMoves(game.board, game.state, color);
-    if(moves.length===0){
-      if(inCheck){ statusEl.className='status warn'; statusEl.textContent = (color==='w'?'Wit':'Zwart') + ' staat mat. ' + (enemy==='w'?'Wit':'Zwart') + ' wint.'; }
-      else { statusEl.className='status'; statusEl.textContent = 'Pat! Remise.'; }
-    } else {
-      statusEl.className='status ok';
-      statusEl.textContent = inCheck ? 'Schaak! Verdedig je koning.' : 'Partij bezig.';
-    }
-  }
-
-  function playMove(move){
-    // push to history stack for undo
-    historyStack.push({ board: U.clone(game.board), state: U.clone(game.state) });
-    document.getElementById('undoBtn').disabled = false;
-
-    // make and commit
-    const {board, state} = makeMove(game.board, game.state, move);
-    game.board = board; game.state = state; game.selected = null;
-
-    // check annotation
-    const inCheck = isInCheck(board, state.turn);
-    const nextMoves = allLegalMoves(board, state, state.turn);
-    const tag = nextMoves.length===0 && inCheck ? '#' : (inCheck ? '+' : '');
-
-    game.history.push(algebraic(move, tag));
-    render();
-    updateStatus();
-  }
-
-  // Undo support
-  const historyStack = [];
-  document.getElementById('undoBtn').addEventListener('click', () => {
-    if(!historyStack.length) return;
-    const prev = historyStack.pop();
-    game.board = prev.board; game.state = prev.state; game.selected=null;
-    game.history.pop();
-    if(historyStack.length===0) document.getElementById('undoBtn').disabled = true;
-    render(); updateStatus();
-  });
-
-  // New game
-  document.getElementById('newGame').addEventListener('click', () => startFromFEN(START_FEN));
-
-  // Flip board
-  document.getElementById('flipBtn').addEventListener('click', () => { game.flipped = !game.flipped; // rebuild coords layer
-    const coords = boardEl.querySelector('.coords'); if(coords) coords.remove(); render(); });
-
-  // FEN controls
-  document.getElementById('loadFen').addEventListener('click', () => {
-    try{ startFromFEN(fenIn.value.trim()); }catch(e){ alert('Ongeldige FEN'); }
-  });
-  document.getElementById('copyFen').addEventListener('click', async () => {
-    const fen = toFEN(game.board, game.state);
-    try{ await navigator.clipboard.writeText(fen); statusEl.textContent = 'FEN gekopieerd ✔'; } catch{ }
-  });
-
-  function startFromFEN(fen){
-    const {board, state} = parseFEN(fen);
-    game.board = board; game.state = state; game.selected = null; game.history=[]; historyStack.length=0;
-    document.getElementById('undoBtn').disabled = true;
-    render(); updateStatus();
-  }
-
-  // Promotion modal
-  let pendingPromotion = null;
-  const modal = document.getElementById('promoModal');
-  modal.addEventListener('click', (e) => { if(e.target===modal) closePromotion(); });
-  modal.querySelectorAll('.opt').forEach(opt => opt.addEventListener('click', () => {
-    if(!pendingPromotion) return; pendingPromotion.promotion = opt.dataset.promo; closePromotion(); playMove(pendingPromotion); pendingPromotion=null; }));
-
-  function openPromotion(){ modal.style.display='flex'; }
-  function closePromotion(){ modal.style.display='none'; }
-
-  // Init
-  setupBoard();
-  startFromFEN(START_FEN);
-})();
-</script>
-</body>
+      initGame();
+    </script>
+  </body>
 </html>
