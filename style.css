@@ -58,7 +58,7 @@ li a:hover:not(.active) {
   color: rgb(0, 0, 0);
 }
 
-a {
+.link {
    float: left;
           text-align: center;
           background-color: #612b12;
