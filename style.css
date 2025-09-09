@@ -11,9 +11,10 @@ h1  {
 
 h2  {
   position: absolute;
-  top: 50%;
+  top: 20%;
+  left: 20%;
   font-size: 16px;
-  width: 100%;
+  width: 50%;
   border:#612b12;
 }
 
