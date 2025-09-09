@@ -4,17 +4,6 @@ body{
    font-family: Arial, sans-serif;
 }
 
-.profiel {
-  width: 158px;
-  border-radius: 34px;
-  float: left;
-  margin-right: 32px;
-}
-
-.username {
-  font-weight: bold;
-}
-
 h1  {
   font-weight: bold;
   text-align: center ;
@@ -24,6 +13,7 @@ h2  {
   font-weight: normal;
   text-align: center ;
   font-size: 16px;
+  width: 100px;
 }
 
 ul {
