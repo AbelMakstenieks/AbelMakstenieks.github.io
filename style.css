@@ -17,6 +17,8 @@ h2  {
   width: 50%;
   border:#612b12;
   text-align: center;
+  background-color: #612b12;
+  color: white;
 }
 
 ul {
