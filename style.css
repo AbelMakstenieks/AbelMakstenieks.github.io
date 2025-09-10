@@ -19,11 +19,11 @@ h2  {
   background-color: #612b12;
   color: white;
   padding: 50px;
-  text-shadow: black;
+  text-shadow: 10px 10px 15px black;
   border-radius: 25px;
-  margin-left: 220px;
+  margin-left: 200px;
   font-weight: 450;
-  box-shadow: 10px 10px 100px grey;
+  box-shadow: 10px 10px 50px grey;
 }
 
 ul {
