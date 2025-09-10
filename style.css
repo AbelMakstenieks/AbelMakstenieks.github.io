@@ -14,14 +14,14 @@ h2  {
   top: 10%;
   left: 30%;
   font-size: 16px;
-  width: 50%;
+  width: 130px;
   border:#612b12;
   text-align: center;
   background-color: #612b12;
   color: white;
-  padding: 130px;
+  padding: 50px;
   text-shadow: black;
-  border-radius: 25%;
+  border-radius: 25px;
 }
 
 ul {
