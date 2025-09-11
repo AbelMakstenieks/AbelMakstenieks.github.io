@@ -38,6 +38,8 @@ h1  {
 }
 .meertekst {
   position: relative;
+  top: 30%;
+  left: 10%;
   text-align: center;
   background-color: #612b12;
   color: white;
@@ -47,9 +49,6 @@ h1  {
   font-weight: 450;
   box-shadow: 10px 10px 40px grey;
   width: 400px;
-  margin-top: 0;
-  margin-left: 0;
-  margin-bottom: 0;
   animation-name: slideinrechts;
   animation-duration: 2s;
   float: right;
