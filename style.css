@@ -37,6 +37,7 @@ h1  {
   animation-duration: 2s;
 }
 .meertekst {
+  position: relative;
   text-align: center;
   background-color: #612b12;
   color: white;
