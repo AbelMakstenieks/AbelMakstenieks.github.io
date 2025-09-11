@@ -33,6 +33,8 @@ h1  {
   margin-left: 130px;
   font-weight: 450;
   box-shadow: 10px 10px 40px grey;
+  animation-name: slideinlinks;
+  animation-duration: 2s;
 }
 .meertekst {
   background-color: #612b12;
@@ -43,7 +45,35 @@ h1  {
   font-weight: 450;
   box-shadow: 10px 10px 40px grey;
   width: 400px;
-  margin-left: 130px;
+  margin-top: 1000px;
+  margin-left: 460px;
+  animation-name: slideinrechts;
+  animation-duration: 2s;
+}
+@keyframes slideinlinks {
+  from {
+    margin-left: -1000px;
+    width: 400px;
+    color: #612b12;
+  }
+  to {
+    margin-left: 130px;
+    width: 400px;
+    color : white;
+  }
+}
+
+@keyframes slideinrechts {
+  from {
+    margin-left: 1000px;
+    width: 400px;
+    color: #612b12;
+  }
+  to {
+    margin-left: 460px;
+    width: 400px;
+    color : white;
+  }
 }
 
 ul {
