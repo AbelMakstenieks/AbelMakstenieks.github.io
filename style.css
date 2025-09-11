@@ -60,7 +60,7 @@ img{
   margin-top: 450px;
   margin-left: 300px;
   animation-name: logofade;
-  animation-duration: 2s;
+  animation-duration: 4s;
 }
 
 @keyframes logofade {
