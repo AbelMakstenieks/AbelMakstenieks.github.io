@@ -45,7 +45,7 @@ h1  {
   font-weight: 450;
   box-shadow: 10px 10px 40px grey;
   width: 400px;
-  margin-top: 1000px;
+  margin-top: 700px;
   margin-left: 460px;
   animation-name: slideinrechts;
   animation-duration: 2s;
@@ -55,7 +55,7 @@ img{
   width: 400px;
   height: 400px;
   border-radius: 25px;
-  margin-top: 600px;
+  margin-top: 450px;
   margin-left: 500px;
   animation-name: logofade;
   animation-duration: 2s;
