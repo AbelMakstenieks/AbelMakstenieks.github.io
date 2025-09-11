@@ -48,7 +48,7 @@ h1  {
   width: 400px;
   margin-top: 0;
   margin-left: 0;
-  margin-bottom: 200px;
+  margin-bottom: 100px;
   animation-name: slideinrechts;
   animation-duration: 2s;
   float: right;
@@ -88,14 +88,10 @@ img{
 
 @keyframes slideinrechts {
   from {
-    margin-left: 1000px;
-    width: 400px;
-    color: #612b12;
+    opacity: 0;
   }
   to {
-    margin-left: 460px;
-    width: 400px;
-    color : white;
+   opacity: 1;
   }
 }
 
