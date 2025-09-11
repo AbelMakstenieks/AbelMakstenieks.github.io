@@ -87,10 +87,12 @@ img{
 
 @keyframes slideinrechts {
   from {
-    opacity: 0;
+    top: 70%;
+    left: 0%;
   }
   to {
-   opacity: 1;
+   top: 70%;
+   left: 40%;
   }
 }
 
