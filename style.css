@@ -48,6 +48,7 @@ h1  {
   width: 400px;
   margin-top: 0;
   margin-left: 0;
+  margin-bottom: 200px;
   animation-name: slideinrechts;
   animation-duration: 2s;
   float: right;
