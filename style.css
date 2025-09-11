@@ -47,7 +47,7 @@ h1  {
   text-shadow: 10px 10px 15px black;
   border-radius: 25px;
   font-weight: 450;
-  box-shadow: 10px 10px 5px grey;
+  box-shadow: 10px 10px 10px grey;
   width: 400px;
   animation-name: slideinrechts;
   animation-duration: 1s;
