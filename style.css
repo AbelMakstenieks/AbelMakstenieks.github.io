@@ -34,7 +34,7 @@ h1  {
   font-weight: 450;
   box-shadow: 10px 10px 40px grey;
   animation-name: slideinlinks;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 .meertekst {
   position: absolute;
@@ -50,7 +50,7 @@ h1  {
   box-shadow: 10px 10px 20px grey;
   width: 400px;
   animation-name: slideinrechts;
-  animation-duration: 2s;
+  animation-duration: 1s;
 }
 
 img{
