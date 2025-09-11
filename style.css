@@ -49,6 +49,7 @@ h1  {
   margin-left: 300px;
   animation-name: slideinrechts;
   animation-duration: 2s;
+  float: right;
 }
 
 img{
