@@ -37,6 +37,7 @@ h1  {
   animation-duration: 2s;
 }
 .meertekst {
+  text-align: center;
   background-color: #612b12;
   color: white;
   padding: 50px;
@@ -46,7 +47,7 @@ h1  {
   box-shadow: 10px 10px 40px grey;
   width: 400px;
   margin-top: 0;
-  margin-left: 300px;
+  margin-left: 0;
   animation-name: slideinrechts;
   animation-duration: 2s;
   float: right;
