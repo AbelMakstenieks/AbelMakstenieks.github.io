@@ -38,7 +38,7 @@ h1  {
 }
 .meertekst {
   position: absolute;
-  top: 80%;
+  top: 90%;
   left: 45%;
   text-align: center;
   background-color: #612b12;
@@ -47,7 +47,7 @@ h1  {
   text-shadow: 10px 10px 15px black;
   border-radius: 25px;
   font-weight: 450;
-  box-shadow: 10px 10px 20px grey;
+  box-shadow: 10px 10px 5px grey;
   width: 400px;
   animation-name: slideinrechts;
   animation-duration: 1s;
@@ -87,12 +87,12 @@ img{
 
 @keyframes slideinrechts {
   from {
-    top: 70%;
+    top: 90%;
     left: 0%;
   }
   to {
-   top: 80%;
-   left: 40%;
+   top: 90%;
+   left: 45%;
   }
 }
 
