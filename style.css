@@ -39,7 +39,7 @@ h1  {
   animation-duration: 1s;
 }
 .meertekst {
-  position: absolute;
+  position: relative;
   top: 50%;
   left: 45%;
   text-align: center;
@@ -106,7 +106,7 @@ ul {
   width: 200px;
   background-color: #E1CFB1;
   height: 100%;
-  position: fixed;
+  position: static;
   overflow: auto;
   top: 0;
   left: 0;
