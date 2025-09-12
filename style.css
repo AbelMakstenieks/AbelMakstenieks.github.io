@@ -19,7 +19,7 @@ h1  {
 }
 
 .tekstovermijzelf {
-  position: relative;
+  position: fixed;
   top: 10%;
   left: 30%;
   font-size: 20px;
