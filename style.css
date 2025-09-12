@@ -40,7 +40,7 @@ h1  {
 }
 .meertekst {
   position: fixed;
-  top: 60%;
+  top: 70%;
   left: 45%;
   text-align: center;
   background-color: #612b12;
@@ -89,11 +89,11 @@ img{
 
 @keyframes slideinrechts {
   from {
-    top: 50%;
+    top: 70%;
     left: 0%;
   }
   to {
-   top: 50%;
+   top: 70%;
    left: 45%;
   }
 }
