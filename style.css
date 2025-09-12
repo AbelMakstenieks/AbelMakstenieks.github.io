@@ -29,7 +29,7 @@ h1  {
   padding: 50px;
   text-shadow: 10px 10px 15px black;
   border-radius: 25px;
-  margin-top: 120px;
+  margin-top: 0px;
   margin-left: 130px;
   font-weight: 450;
   box-shadow: 10px 10px 40px grey;
@@ -38,7 +38,7 @@ h1  {
 }
 .meertekst {
   position: relative;
-  top: 90%;
+  top: 50%;
   left: 45%;
   text-align: center;
   background-color: #612b12;
@@ -87,11 +87,11 @@ img{
 
 @keyframes slideinrechts {
   from {
-    top: 90%;
+    top: 50%;
     left: 0%;
   }
   to {
-   top: 90%;
+   top: 50%;
    left: 45%;
   }
 }
