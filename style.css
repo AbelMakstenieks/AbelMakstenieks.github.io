@@ -37,7 +37,7 @@ h1  {
   animation-duration: 1s;
 }
 .meertekst {
-  position: relative;
+  position: absolute;
   top: 50%;
   left: 45%;
   text-align: center;
@@ -54,6 +54,7 @@ h1  {
 }
 
 img{
+  position: relative;
   width: 400px;
   height: 400px;
   border-radius: 25px;
