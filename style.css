@@ -4,6 +4,8 @@ body{
 }
 
 h1  {
+  position: sticky;
+  top: 0;
   font-weight: 900;
   text-align: center ;
   background-color: #dac39b;
