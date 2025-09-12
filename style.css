@@ -19,7 +19,6 @@ h1  {
 }
 
 .tekstovermijzelf {
-  position: fixed;
   top: 20%;
   left: 30%;
   font-size: 20px;
@@ -39,7 +38,6 @@ h1  {
   animation-duration: 1s;
 }
 .meertekst {
-  position: fixed;
   top: 70%;
   left: 45%;
   text-align: center;
