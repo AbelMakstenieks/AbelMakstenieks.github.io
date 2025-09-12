@@ -57,7 +57,7 @@ img{
 
 @keyframes logofade {
   from {
-    opacity: 0;
+    opacity: 1;
   }
   to {
     opacity: 1;
@@ -66,25 +66,19 @@ img{
 
 @keyframes slideinlinks {
   from {
-    margin-left: -1000px;
-    width: 400px;
     color: #612b12;
   }
   to {
-    margin-left: 130px;
-    width: 400px;
     color : white;
   }
 }
 
 @keyframes slideinrechts {
   from {
-    top: 70%;
-    left: 0%;
+    color: #612B12;
   }
   to {
-   top: 70%;
-   left: 45%;
+   color: white;
   }
 }
 
