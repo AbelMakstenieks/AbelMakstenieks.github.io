@@ -75,9 +75,11 @@ img{
 @keyframes slideinrechts {
   from {
     color: #612B12;
+    left: 0%;
   }
   to {
    color: white;
+   left: 50%;
   }
 }
 
