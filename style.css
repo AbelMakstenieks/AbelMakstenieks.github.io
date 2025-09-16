@@ -83,7 +83,7 @@ img{
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 0;
+  padding: 30px;
   background-color: #E1CFB1;
   width: 100%;
   position: fixed;
