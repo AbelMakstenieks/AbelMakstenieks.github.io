@@ -83,7 +83,7 @@ img{
 ul {
   list-style-type: none;
   margin: 0;
-  padding: 30px;
+  padding: 10px;
   background-color: #E1CFB1;
   width: 100%;
   position: fixed;
@@ -103,7 +103,7 @@ float: left;
 li a {
   display: block;
   color: black;
-  padding: 8px 16px;
+  padding: 10px 16px;
   text-decoration: none;
   text-align: center;
   font-family: sans-serif;
