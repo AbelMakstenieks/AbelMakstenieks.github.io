@@ -42,7 +42,8 @@ h1  {
   width: 400px;
   animation-name: slideinrechts;
   animation-duration: 1s;
-  float: left;
+  left: 50%;
+  position: relative;
 }
 
 img{
