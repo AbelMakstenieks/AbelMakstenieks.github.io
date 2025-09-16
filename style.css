@@ -96,6 +96,12 @@ ul {
   top: 0;
   left: 0;
   border: 0,5px black;
+  display: flex;
+}
+ 
+li{
+
+float: left;
 }
 
 li a {
