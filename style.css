@@ -49,9 +49,8 @@ h1  {
 img{
   width: 400px;
   height: 400px;
-  border-radius: 25px;
   animation-name: logofade;
-  animation-duration: 4s;
+  animation-duration: 5s;
   float: left;
 }
 
