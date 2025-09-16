@@ -53,6 +53,7 @@ img{
   border-radius: 25px;
   animation-name: logofade;
   animation-duration: 4s;
+  left: 100px;
 }
 
 @keyframes logofade {
