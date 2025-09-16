@@ -32,6 +32,7 @@ h1  {
   box-shadow: 10px 10px 40px grey;
   animation-name: slideinlinks;
   animation-duration: 1s;
+  float: left;
 }
 .meertekst {
   text-align: center;
@@ -45,6 +46,7 @@ h1  {
   width: 400px;
   animation-name: slideinrechts;
   animation-duration: 1s;
+  float: left;
 }
 
 img{
@@ -53,7 +55,7 @@ img{
   border-radius: 25px;
   animation-name: logofade;
   animation-duration: 4s;
-  left: 100px;
+  float: left;
 }
 
 @keyframes logofade {
