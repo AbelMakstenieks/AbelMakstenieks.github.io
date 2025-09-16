@@ -42,8 +42,7 @@ h1  {
   width: 400px;
   animation-name: slideinrechts;
   animation-duration: 1s;
-  left: 50%;
-  position: relative;
+  float: left;
 }
 
 img{
@@ -75,11 +74,9 @@ img{
 @keyframes slideinrechts {
   from {
     color: #612B12;
-    left: 0%;
   }
   to {
    color: white;
-   left: 50%;
   }
 }
 
