@@ -4,7 +4,7 @@ body{
 }
 
 div {
-  margin-left: 50%;
+  margin-left: 240px;
 }
 
 h1  {
@@ -123,13 +123,4 @@ li a.active {
 li a:hover:not(.active) {
   background-color: #dabc8a;
   color: rgb(0, 0, 0);
-};
-
-.hallotjes { 
-  float: left;
-  text-align: center;
-  background-color: #612b12;
-  padding: 16px 100px;
-  color: white; 
-  text-decoration: none;
 }
