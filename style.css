@@ -90,7 +90,6 @@ ul {
   overflow: auto;
   top: 0;
   left: 0;
-  border: 0,5px black;
   display: flex;
   position: static;
 }
@@ -108,7 +107,9 @@ li a {
   text-align: center;
   font-family: sans-serif;
   margin-left: 0;
-  border-radius: 5px;
+  left: 0;
+  border-radius: 10px;
+  margin-right: 3px;
 }
 li a.active {
   background-color: #612B12;
