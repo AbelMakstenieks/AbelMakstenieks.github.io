@@ -3,6 +3,10 @@ body{
   background-color: #E1CFB1;
 }
 
+div {
+  margin-left: 50%;
+}
+
 h1  {
   font-weight: 900;
   text-align: center ;
