@@ -9,7 +9,7 @@ h1  {
   background-color: #dac39b;
   width: 100%;
   padding: 25px;
-  margin-top: 10px;
+  margin-top: 5px;
   
   
 
@@ -88,7 +88,7 @@ ul {
   width: 100%;
   position: fixed;
   overflow: auto;
-  top: 5px;
+  margin-top: 5px;
   left: 0;
   display: flex;
   position: static;
