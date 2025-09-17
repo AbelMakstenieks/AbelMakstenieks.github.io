@@ -5,8 +5,9 @@ body{
 
 .kleurmodellen {
   text-align: center;
-  font-weight: normal;
-  width: 600px;
+  font-weight: 100;
+  width: 800px;
+  margin-left: 100px;
 }
 
 h1  {
