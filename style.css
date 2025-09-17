@@ -107,7 +107,7 @@ li a {
   text-decoration: none;
   text-align: center;
   font-family: sans-serif;
- 
+  margin-left: 0;
 }
 
 li a.active {
