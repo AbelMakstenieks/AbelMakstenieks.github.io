@@ -40,7 +40,8 @@ h1  {
   background-color: #dac39b;
   width: 100%;
   padding: 25px;
-  margin-top: 7px;
+  margin-top: 65px;
+  position: static;
   
   
 
@@ -122,7 +123,7 @@ ul {
   margin-top: 5px;
   left: 0;
   display: flex;
-  position: static;
+  position: sticky;
 }
  
 li{
