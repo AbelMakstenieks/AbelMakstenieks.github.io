@@ -117,9 +117,8 @@ ul {
   margin: 0;
   background-color: #E1CFB1;
   width: 100%;
-  position: fixed;
   overflow: auto;
-  margin-top: 5px;
+  padding: 20px;
   left: 0;
   display: flex;
   position: fixed;
