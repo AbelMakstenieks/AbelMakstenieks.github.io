@@ -4,23 +4,22 @@ body{
 }
 
 .uitleg1 {
-  font-size: 25px;
-  text-align: center;
+  font-size: 40px;
   font-weight: 150;
   width: 800px;
-  margin-left: 350px;
+  margin-left: 100px;
 }
 .kopjes1{
-  font-size: 20px;
+  font-size: 30px;
   margin-left: 100px;
 
 }
 .kopjes2 {
-font-size: 20px;
+font-size: 30px;
 margin-left: 100px;
 }
 .bettereuitleg {
-  font-size: 15px;
+  font-size: 25px;
   margin-left: 100px;
   font-weight: 100;
   width: 1000px;
