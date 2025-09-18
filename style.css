@@ -3,22 +3,21 @@ body{
   background-color: #E1CFB1;
 }
 
-.kleurmodellen {
+.uitleg1 {
+  font-size: 25px;
   text-align: center;
   font-weight: 100;
   width: 800px;
   margin-left: 350px;
 }
-.uitleg1 {
-  font-size: 25px;
-}
 .kopjes1{
   font-size: 20px;
+  margin-left: 100px;
 
 }
 .kopjes2 {
 font-size: 20px;
-float: left;
+margin-left: 100px;
 }
 
 h1  {
