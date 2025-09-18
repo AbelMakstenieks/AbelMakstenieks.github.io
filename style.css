@@ -40,11 +40,8 @@ h1  {
   background-color: #dac39b;
   width: 100%;
   padding: 25px;
-  margin-top: 65px;
+  margin-top: 50px;
   position: static;
-  
-  
-
 }
 
 .tekstovermijzelf {
@@ -123,7 +120,7 @@ ul {
   margin-top: 5px;
   left: 0;
   display: flex;
-  position: sticky;
+  position: fixed;
 }
  
 li{
