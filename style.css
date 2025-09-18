@@ -28,7 +28,7 @@ body{
   padding: 25px;
   width: 400px;
   border-radius: 20px;
-  
+
   height: 30px;
   text-align: center;
 }
@@ -46,7 +46,7 @@ h1  {
   width: 70%;
   padding: 25px;
   margin-top: 60px;
-  position: static;
+  position: center;
 }
 
 .tekstovermijzelf {
