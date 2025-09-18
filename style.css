@@ -12,11 +12,20 @@ body{
 .kopjes1{
   font-size: 30px;
   margin-left: 100px;
-
+  background-color: #612B12;
+  color: white;
+  padding: 15px;
+  width: 30px;
+  border-radius: 7px;
 }
 .kopjes2 {
-font-size: 30px;
-margin-left: 100px;
+  font-size: 30px;
+  margin-left: 100px;
+  background-color: #612B12;
+  color: white;
+  padding: 15px;
+  width: 30px;
+  border-radius: 7px;
 }
 .bettereuitleg {
   font-size: 25px;
