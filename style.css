@@ -45,7 +45,7 @@ h1  {
   width: 100%;
   padding: 25px;
   margin-top: 50px;
-  position: static;
+  position: relative;
 }
 
 .tekstovermijzelf {
