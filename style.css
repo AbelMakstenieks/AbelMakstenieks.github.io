@@ -14,7 +14,7 @@ body{
   margin-left: 100px;
   background-color: #612B12;
   color: white;
-  padding: 40px;
+  padding: 25px;
   width: 400px;
   border-radius: 20px;
   height: 30px;
@@ -25,9 +25,10 @@ body{
   margin-left: 100px;
   background-color: #612B12;
   color: white;
-  padding: 40px;
+  padding: 25px;
   width: 400px;
   border-radius: 20px;
+  
   height: 30px;
   text-align: center;
 }
@@ -42,9 +43,9 @@ h1  {
   font-weight: 900;
   text-align: center ;
   background-color: #dac39b;
-  width: 1500px;
+  width: 70%;
   padding: 25px;
-  margin-top: 65px;
+  margin-top: 60px;
   position: static;
 }
 
