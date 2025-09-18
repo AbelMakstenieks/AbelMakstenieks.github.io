@@ -14,7 +14,7 @@ body{
   margin-left: 100px;
   background-color: #612B12;
   color: white;
-  padding: 15px;
+  padding: 40px;
   width: 400px;
   border-radius: 20px;
   height: 30px;
@@ -25,7 +25,7 @@ body{
   margin-left: 100px;
   background-color: #612B12;
   color: white;
-  padding: 15px;
+  padding: 40px;
   width: 400px;
   border-radius: 20px;
   height: 30px;
@@ -44,7 +44,7 @@ h1  {
   background-color: #dac39b;
   width: 80%;
   padding: 25px;
-  margin-top: 48px;
+  margin-top: 60px;
   position: static;
 }
 
