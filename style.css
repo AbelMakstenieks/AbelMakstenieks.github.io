@@ -25,6 +25,12 @@ body{
   opacity: 0.9;
   cursor: pointer;
   text-decoration: none;
+  transition-duration: 0.4s;
+
+}
+.kopjes1:hover{
+background-color: #723619;
+color: white;
 }
 .kopjes2 {
   margin-top: 50px;
@@ -40,6 +46,12 @@ body{
   opacity: 0.9;
   cursor: pointer;
   text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+.kopjes2:hover{
+background-color: #723619;
+color: white;
 }
 .bettereuitleg {
   font-size: 17px;
