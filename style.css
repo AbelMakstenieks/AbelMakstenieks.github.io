@@ -29,9 +29,9 @@ body{
 
 }
 .kopjes1:hover{
-background-color: #723619;
-color: white;
-border: 2px solid #ffffff;
+background-color: #ffffff;
+color: rgb(0, 0, 0);
+border: 4px solid #723619;
 }
 .kopjes2 {
   margin: 50px;
@@ -51,9 +51,9 @@ border: 2px solid #ffffff;
 }
 
 .kopjes2:hover{
-background-color: #723619;
-color: white;
-border: 2px solid #ffffff;
+background-color: #ffffff;
+color: rgb(0, 0, 0);
+border: 4px solid #723619;
 }
 .bettereuitleg {
   font-size: 17px;
