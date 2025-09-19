@@ -117,7 +117,7 @@ ul {
   list-style-type: none;
   margin: 0;
   background-color: #E1CFB1;
-  width: 100%;
+  width: 100px;
   overflow: auto;
   padding: 7px;
   left: 0;
