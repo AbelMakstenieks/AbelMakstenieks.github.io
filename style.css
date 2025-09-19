@@ -117,11 +117,11 @@ ul {
   list-style-type: none;
   margin: 0;
   background-color: #E1CFB1;
-  width: 100px;
+  width: 100%;
   overflow: auto;
   padding: 7px;
   left: 0;
-  display: block;
+  display: flex;
   position: fixed;
   top: 0;
   margin-top: 0px;
