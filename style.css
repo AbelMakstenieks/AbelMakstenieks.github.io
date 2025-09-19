@@ -52,6 +52,7 @@ color: white;
 .kopjes2:hover{
 background-color: #723619;
 color: white;
+border: 2px solid #ffffff;
 }
 .bettereuitleg {
   font-size: 17px;
