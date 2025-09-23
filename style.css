@@ -1,38 +1,37 @@
 body{
-  margin: 0;
-  background-color: #E1CFB1;
+  margin: 0;  /*Dit is om alle elementen in de body tag geen ruimte tussen te stoppen en ik ze zelf kan plaatsen.*/
+    background-color: #E1CFB1; /*Dit is om mijn website een achtergrond kleur te geven.*/
 }
 
 .uitleg1 {
-  font-size: 25px;
-  font-weight: 150;
-  width: 900px;
-  margin-left: 100px;
-  text-align: center;
-  margin-left: 300px;
+  font-size: 25px; /*Dit geeft mijn letters de juiste grote.*/
+  font-weight: 150; /*Dit geeft de dikte van mijn tekst aan.*/
+  width: 900px; /*Ik wil niet dat mijn tekst de hele pagina in gebruik neemt, dus heb ik dit neer gezet om te bepalen hoe breedt dit stukje is.*/
+  text-align: center;/*De tekst staat automatisch aan de linkerkant gecentreert, dat pas ik hiermee aan dat het in het midden is.*/
+  margin-left: 300px; /*Ik wil dat mijn tekst in het midden zit van de pagina dat doe ik hier mee.*/
 }
 .kopjes1{
-  margin: 50px;
+  margin: 50px;/*Dit zorgt ervoor dat er om deze element blanko ruimte zit om het aantrekkelijker te maken is om naar te kijken.*/
   font-size: 18px;
   margin-left: 100px;
-  background-color: #612B12;
-  color: white;
-  padding: 15px;
+  background-color: #612B12;/*Het is een andere achtergrond dat wat mijn pagina normaal heeft dus moet ik deze toevoegen.*/
+  color: white; /*Voor de tekst een leuk kleurtje te geven.*/
+  padding: 15px;/*Ik wil dat de achtergrond kleur om mijn tekst zit, maar dat het groter is dan hoe het automatische is.*/
   width: 120px;
-  border-radius: 20px;
-  height: 20px;
+  border-radius: 20px; /*Ik wil geen rechte hoek punten, dus zorg ik ervoor met dit dat hij de hoeken wat ronder maakt.*/
+  height: 20px;/*Dit zorgt ervoor dat hij niet te lang wordt en het er gek uit ziet, het bepaalt dus hoe lang hij in de lengte is.*/
   text-align: center;
-  opacity: 0.9;
-  cursor: pointer;
-  text-decoration: none;
-  transition-duration: 0.4s;
-  border: 4px solid #723619;
+  opacity: 0.9;/*Dit doet bijna niets maar toch wel, ik vond de achtergrond kleur net te heftig maar hierdoor net wat minder omdat hij wat doorzichtiger wordt.*/
+  cursor: pointer; /*Het is een link, en hier mee zorg ik ervoor dat de cursor anders wordt als je erover heen bewegt.*/
+  text-decoration: none; /*Het is een link, maar linkjes hebben een streep eronder automatisch hierbij haal ik het weg.*/
+  transition-duration: 0.4s;/*Het is een animatie dus het duurt 0.4 seconde voordat de animatie voorbij is.*/
+  border: 4px solid #612B12; /*Dit heb ik toegevoegt om de animatie net wat lekkerder te laten verlopen, want zonder dit loopt de animatie gek.*/
 
 }
 .kopjes1:hover{
-background-color:#E1CFB1;
-color: rgb(0, 0, 0);
-border: 4px solid #723619;
+background-color:#E1CFB1;/*De animatie maakt de achtergrond kleur anders.*/
+color: rgb(0, 0, 0);/*De tekst kleur moet ook worden aangepast.*/
+border: 4px solid #612B12; /*Met dit wordt de knop van volledig bruin naar alleen de rand bruin.*/
 }
 .kopjes2 {
   margin: 50px;
@@ -49,13 +48,13 @@ border: 4px solid #723619;
   cursor: pointer;
   text-decoration: none;
   transition-duration: 0.4s;
-  border: 4px solid #723619;
+  border: 4px solid #612B12;
 }
 
 .kopjes2:hover{
 background-color:#E1CFB1;
 color: rgb(0, 0, 0);
-border: 4px solid #723619;
+border: 4px solid #612B12;
 }
 .bettereuitleg {
   font-size: 17px;
@@ -70,7 +69,7 @@ h1  {
   background-color: #dac39b;
   padding: 25px;
   margin-top: 60px;
-  position: static;
+  position: static; /*De positie van de h1 wil ik dat hij niet mee beweegt als je scrolt op de website dus hiermee zet ik hem vast.*/
 }
 
 .tekstovermijzelf {
@@ -81,13 +80,13 @@ h1  {
   background-color: #612b12;
   color: white;
   padding: 50px;
-  text-shadow: 10px 10px 15px black;
+  text-shadow: 10px 10px 15px black; /*Voor tekst schaduw.*/
   border-radius: 25px;
   font-weight: 450;
-  box-shadow: 10px 10px 40px grey;
-  animation-name: slideinlinks;
-  animation-duration: 1s;
-  float: left;
+  box-shadow: 10px 10px 40px grey; /*Voor de box een schaduw te geven.*/
+  animation-name: slideinlinks;/*De element heeft een animatie deze heb ik een naam geven.*/
+  animation-duration: 1s; /*De animatie duurt 1 seconde.*/
+  float: left; /*Zodat hij link vliegt tegen andere elementen aan.*/
 }
 .meertekst {
   text-align: center;
@@ -112,11 +111,11 @@ img{
   float: left;
 }
 
-@keyframes logofade {
-  from {
+@keyframes logofade { /*De animatie code, dus @keyframes is de tag en dan logofade zorgt ervoor dat de juiste element wordt geanimeert.*/
+  from { /*Waar de animatie begint en hoe de element eruit ziet.*/
     opacity: 0;
   }
-  to {
+  to { /*Waar de animatie eindigt en hoe de element eruit ziet.*/
     opacity: 1;
   }
 }
@@ -140,15 +139,15 @@ img{
 }
 
 ul {
-  list-style-type: none;
+  list-style-type: none; /*Normaal staan er puntjes voor de tekst maar dit verwijdert ze.*/
   margin: 0;
   background-color: #E1CFB1;
   width: 100%;
-  overflow: auto;
+  overflow: auto; /*Als er teveel links op nav bar staat, dan zorgt dit ervoor dat hij kan scrollen.*/
   padding: 7px;
   left: 0;
-  display: flex;
-  position: fixed;
+  display: block; /*Zorgt ervoor dat alles te klikken is om de link te activeren. */
+  position: fixed; /*Dat de nav bar vast blijft staan boven in het scherm ook als je scrolt.*/
   top: 0;
   margin-top: 0px;
 }
@@ -164,18 +163,18 @@ li a {
   padding: 15px 16px;
   text-decoration: none;
   text-align: center;
-  font-family: sans-serif;
+  font-family: sans-serif; /*Dit bepaalt de lettertype.*/
   margin-left: 0;
   left: 0;
   border-radius: 10px;
   margin-right: 4px;
 }
-li a.active {
+li a.active { /*Zorgt ervoor dat als je op een link klikt in de nav bar en je op de pagina komt, de link een kleurtje krijgt als je op de pagina staat.*/
   background-color: #612B12;
   color: white;
 }
 
-li a:hover:not(.active) {
+li a:hover:not(.active) { /*Als je hovert over een link geeft dit het een andere kleur.*/
   background-color: #dabc8a;
   color: rgb(0, 0, 0);
 }
