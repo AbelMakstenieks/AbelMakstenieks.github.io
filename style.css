@@ -178,5 +178,40 @@ li a:hover:not(.active) { /*Als je hovert over een link geeft dit het een andere
   background-color: #dabc8a;
   color: rgb(0, 0, 0);
   border-bottom: 6px solid #612B12;
-  transition: border-bottom 2s;
+  transition: border-bottom 1s;
+}
+
+/* Basis styling links */
+li a {
+  display: block;
+  color: black;
+  padding: 15px 16px;
+  text-decoration: none;
+  text-align: center;
+  font-family: sans-serif;
+  margin-right: 4px;
+  position: relative; /* nodig voor ::after */
+}
+
+/* Het balkje onder de link */
+li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0; /* onderaan de link */
+  width: 0; /* start onzichtbaar */
+  height: 4px; /* dikte van het balkje */
+  background-color: #612B12;
+  transition: width 0.3s ease-in-out;
+  border-radius: 2px;
+}
+
+/* Bij hover groeit het balkje van links naar rechts */
+li a:hover::after {
+  width: 100%;
+}
+
+/* Active link krijgt meteen een volledig balkje */
+li a.active::after {
+  width: 100%;
 }
