@@ -26,7 +26,7 @@ body{
   text-decoration: none; /*Het is een link, maar linkjes hebben een streep eronder automatisch hierbij haal ik het weg.*/
   transition-duration: 0.4s;/*Het is een animatie dus het duurt 0.4 seconde voordat de animatie voorbij is.*/
   border: 4px solid #612B12; /*Dit heb ik toegevoegt om de animatie net wat lekkerder te laten verlopen, want zonder dit loopt de animatie gek.*/
-
+  position: static;
 }
 .kopjes1:hover{
 background-color:#E1CFB1;/*De animatie maakt de achtergrond kleur anders.*/
