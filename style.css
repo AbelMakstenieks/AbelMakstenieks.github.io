@@ -211,5 +211,5 @@ li a:hover::after {
 
 /* Active link krijgt meteen een volledig balkje */
 li a.active::after {
-  width: 100%;
+  width: 0%;
 }
