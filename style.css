@@ -49,6 +49,7 @@ border: 4px solid #612B12; /*Met dit wordt de knop van volledig bruin naar allee
   text-decoration: none;
   transition-duration: 0.4s;
   border: 4px solid #612B12;
+  position: static;
 }
 
 .kopjes2:hover{
