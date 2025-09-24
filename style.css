@@ -60,13 +60,14 @@ border: 4px solid #612B12;
 width: 400px;
 height: auto;
 float: left;
+
 }
 
 .bettereuitleg {
   font-size: 17px;
   margin-left: 110px;
   font-weight: 100;
-  width: 800px;
+  width: 500px;
   margin-bottom: 50px;
   margin-top: 50px;
 }
