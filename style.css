@@ -13,7 +13,7 @@ body{
 .kopjes1{
   margin-top: 100px;/*Dit zorgt ervoor dat er om deze element blanko ruimte zit om het aantrekkelijker te maken is om naar te kijken.*/
   font-size: 18px;
-  margin-left: 100px;
+  margin-left: 50px;
   background-color: #612B12;/*Het is een andere achtergrond dat wat mijn pagina normaal heeft dus moet ik deze toevoegen.*/
   color: white; /*Voor de tekst een leuk kleurtje te geven.*/
   padding: 15px;/*Ik wil dat de achtergrond kleur om mijn tekst zit, maar dat het groter is dan hoe het automatische is.*/
@@ -37,7 +37,7 @@ position: static;
 .kopjes2 {
   margin-top: 100px;
   font-size: 18px;
-  margin-left: 100px;
+  margin-left: 50px;
   background-color: #612B12;
   color: white;
   padding: 15px;
