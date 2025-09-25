@@ -234,7 +234,7 @@ li a.active::after {
   margin: 40px;
 }
 
-.tekstblok {
+.tekstblok h2 {
   max-width: 600px;
   margin-right: 40px;
   font-size: 18px;
