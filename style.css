@@ -271,4 +271,5 @@ li a.active::after {
   height: auto;
   border-radius: 10px;
   box-shadow: 5px 5px 15px grey;
+  position: static;
 }
