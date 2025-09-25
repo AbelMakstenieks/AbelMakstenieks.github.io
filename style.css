@@ -63,6 +63,7 @@ position: static;
 width: 200px;
 height: 700px;
 float: left;
+position: relative;
 
 }
 
