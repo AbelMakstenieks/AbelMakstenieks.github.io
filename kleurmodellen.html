@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="nl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,23 +9,48 @@
 </head>
 <body>
     <ul>
-     <li><a href="index.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="home.html">geld</a></li>
       <li><a href="chatgpt.html">chatgptgame</a></li>
-      <li><a  href="binairstelsel.html">Binairstelsel</a></li>
+      <li><a href="binairstelsel.html">Binairstelsel</a></li>
       <li><a href="Invoer - verwerking - uitvoer.html">Invoer - verwerking - uitvoer</a></li>
-      <li><a  href="compressie.html">Compressie</a></li>
+      <li><a href="compressie.html">Compressie</a></li>
       <li><a class="active" href="kleurmodellen.html">Kleurmodellen</a></li>
     </ul>
-      <h1>Welkom op de Kleurmodellenpagina</h1>
-    <div>
-      <h2 class="uitleg1">Je hebt 2 modellen, RGB-model en CMY-model. Alle twee zorgen ze ervoor dat je met 3 basiskleuren alle kleuren kan maken die je kent, maar ze werken met verschillende basiskleuren en andere achtergronden.</h2>
-      <a target="_blank" href="https://youtu.be/B3Jqlb464Bk?si=dSXPFKNZ1BsdrxMV" class="kopjes1">RGB-model</a>
 
-      <h3 class="bettereuitleg">Dit model werkt op een zwarte achtergrond. Zoals een computerscherm. De 3 basiskleuren: rood, groen en blauw mengen zich met elkaar om alle kleuren te maken die er zijn. Dit mengen gebeurt door elke lamp apart van elkaar te besturen, het feller en minder fel aanzetten van de 3 basiskleuren. dit gaat van 0 to 255. Dus 255, 0, 0 is rood en 0, 255, 0 is groen en 0, 0, 255 is blauw.</h3>
-      <a target="_blank" href="https://youtu.be/B3Jqlb464Bk?si=dSXPFKNZ1BsdrxMV" class="kopjes2">CMY-model</a>
-      <h3 class="bettereuitleg">Hierbij zie je verschillende kleuren op een wit plaatje, die uit een printer komt. Om met dit model kleuren te krijgen worden de drie kleuren: cyaan, magenta en geel gebruikt. Als je de drie kleuren mixt krijg je donkergrijs, daarom heeft een printer ook zwarte inkt, die wordt aangegeven met k. Nu als je bijvoorbeeld cyaan en geel mengt krijg je groen, en magenta en cyaan maakt dan blauw.</h3>
-      </div>
-      <img class="model" src="afbeeldingen/RGB-CMYK.gif" alt="RGB-CMYK">
-      </body>
+    <h1>Welkom op de Kleurmodellenpagina</h1>
+
+    <div class="container">
+        <div class="tekstblok">
+            <p>
+                Kleuren die je ziet op een scherm of in een print komen niet zomaar tot stand. Daarvoor gebruiken we <b>kleurmodellen</b>.
+                Op een beeldscherm wordt het <b>RGB-model</b> gebruikt. Dit staat voor Rood, Groen en Blauw. Door deze drie kleuren
+                in verschillende sterktes te mengen, kunnen alle andere kleuren gemaakt worden. Zet je alle drie op de hoogste waarde,
+                dan krijg je wit. Zet je ze allemaal op nul, dan krijg je zwart.
+            </p>
+
+            <p>
+                Bij printers werkt dit anders. Daar gebruiken we het <b>CMY-model</b>, dat staat voor Cyaan, Magenta en Geel. 
+                Met deze kleuren kan bijna elke andere kleur worden gedrukt. Toch ontstaat er bij het mengen van alle drie nooit een echte diepe zwart.
+                Daarom voegen printers vaak nog een extra kleur toe: zwart, de <b>K</b> in <b>CMYK</b>.
+            </p>
+
+            <p>
+                De kleuren worden zichtbaar in <b>pixels</b>. Een pixel is het allerkleinste puntje van een digitaal beeld. Elke pixel heeft een eigen kleur.
+                Hoe meer pixels een scherm of afbeelding heeft, hoe scherper en mooier het eruitziet. Dat noemen we de <b>resolutie</b>.
+                Een voorbeeld is 1920 bij 1080 pixels (Full HD). Hoe hoger het aantal pixels, hoe beter de kwaliteit van het beeld.
+            </p>
+
+            <div class="links">
+                <a target="_blank" href="https://www.w3schools.com/colors/default.asp">Meer over kleuren</a>
+                <a target="_blank" href="https://www.w3schools.com/colors/tryit.asp?filename=trycolors_rgbvalues">RGB oefenen</a>
+                <a target="_blank" href="https://youtu.be/15aqFQQVBWU?si=yrmjNNBVtvuTKQVS">Video uitleg</a>
+            </div>
+        </div>
+
+        <div class="afbeeldingblok">
+            <img class="model" src="afbeeldingen/RGB-CMYK.gif" alt="RGB en CMYK model">
+        </div>
+    </div>
+</body>
 </html>

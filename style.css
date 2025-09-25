@@ -226,3 +226,49 @@ li a:hover::after {
 li a.active::after {
   width: 0%;
 }
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 40px;
+}
+
+.tekstblok {
+  max-width: 600px;
+  margin-right: 40px;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.tekstblok p {
+  margin-bottom: 20px;
+}
+
+.links a {
+  display: inline-block;
+  background-color: #612B12;
+  color: white;
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.links a:hover {
+  background-color: #E1CFB1;
+  color: black;
+  border: 2px solid #612B12;
+}
+
+.afbeeldingblok {
+  flex-shrink: 0;
+}
+
+.model {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px grey;
+}
