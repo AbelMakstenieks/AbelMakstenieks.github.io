@@ -241,7 +241,7 @@ li a.active::after {
   line-height: 1.6;
 }
 
-.tekstblok p {
+.tekstblok h2 {
   margin-bottom: 20px;
 }
 
