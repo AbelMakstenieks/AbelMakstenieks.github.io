@@ -222,49 +222,13 @@ li a:hover::after {
   width: 100%;
 }
 
-/* Active link krijgt meteen een volledig balkje */
-li a.active::after {
-  width: 0%;
-}
-
 .container {
   display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  margin: 40px;
-}
-
-.tekstblok h2 {
+  margin-left: 120px;
   max-width: 600px;
   margin-right: 40px;
   font-size: 18px;
-  line-height: 1.6;
-}
-
-.tekstblok h2 {
   margin-bottom: 20px;
-}
-
-.links a {
-  display: inline-block;
-  background-color: #612B12;
-  color: white;
-  padding: 10px 15px;
-  margin-left: 5px;
-  border-radius: 10px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.links a:hover {
-  background-color: #E1CFB1;
-  color: black;
-  border: 4px solid #612B12;
-  margin-left: 5px;
-}
-
-.afbeeldingblok {
-  flex-shrink: 0;
 }
 
 .model {
