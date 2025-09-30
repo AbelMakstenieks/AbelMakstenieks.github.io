@@ -4,6 +4,9 @@ body{
 }
 
 .uitleg1 {
+  display: block; /*Dit zorgt ervoor dat ik de margin left en right kan gebruiken.*/
+  margin-left: auto; /*Dit zorgt ervoor dat de tekst in het midden komt te staan.*/
+  margin-right: auto; /*Dit zorgt ervoor dat de tekst in het midden komt te staan.*/
   font-size: 25px; /*Dit geeft mijn letters de juiste grote.*/
   font-weight: 150; /*Dit geeft de dikte van mijn tekst aan.*/
   width: 900px; /*Ik wil niet dat mijn tekst de hele pagina in gebruik neemt, dus heb ik dit neer gezet om te bepalen hoe breedt dit stukje is.*/
@@ -243,8 +246,8 @@ li a:hover:not(.active) { /*Als je hovert over een link geeft dit het een andere
   color: rgb(0, 0, 0);
 }
 
-/* Basis styling links */
-li a {
+
+li a { /*De linkjes in de nav bar*/
   display: block;
   color: black;
   padding: 15px 16px;
@@ -255,22 +258,22 @@ li a {
   position: relative; /* nodig voor ::after */
 }
 
-/* Het balkje onder de link */
-li a::after {
+
+li a::after { /* Het balkje onder de link */
   content: "";
   position: absolute;
   left: 0;
   bottom: 0; /* onderaan de link */
   width: 0; /* start onzichtbaar */
   height: 4px; /* dikte van het balkje */
-  background-color: #612B12;
-  transition: width 0.3s ease-in-out;
-  border-radius: 2px;
+  background-color: #612B12; /* kleur van het balkje */
+  transition: width 0.3s ease-in-out; /* Animatie voor het groeien van het balkje */
+  border-radius: 2px; /* Ronde hoeken voor het balkje */
 }
 
-/* Bij hover groeit het balkje van links naar rechts */
+
 li a:hover::after {
-  width: 100%;
+  width: 100%;/* Bij hover groeit het balkje van links naar rechts */
 }
 
 iframe {
@@ -278,12 +281,21 @@ iframe {
   margin-left: 300px;
 }
 .binairstelsel {
+  display: block; /*Dit zorgt ervoor dat ik de margin left en right kan gebruiken.*/
+  margin-left: auto; /*Dit zorgt ervoor dat de afbeelding in het midden komt te staan.*/
+  margin-right: auto; /*Dit zorgt ervoor dat de afbeelding in het midden komt te staan.*/
+  width: 160px; 
+  height: auto; /*Dit zorgt ervoor dat de afbeelding niet vervormd wordt.*/
+  margin-top: 50px; /*Dit zorgt ervoor dat er ruimte is boven de afbeelding.*/
+  margin-bottom: 50px; /*Dit zorgt ervoor dat er ruimte is onder de afbeelding.*/
+
+}
+.asciitabel{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 160px;
+  width: 900px;
   height: auto;
   margin-top: 50px;
   margin-bottom: 50px;
-
 }
