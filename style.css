@@ -11,7 +11,6 @@ body{
   font-weight: 150; /*Dit geeft de dikte van mijn tekst aan.*/
   width: 900px; /*Ik wil niet dat mijn tekst de hele pagina in gebruik neemt, dus heb ik dit neer gezet om te bepalen hoe breedt dit stukje is.*/
   text-align: center;/*De tekst staat automatisch aan de linkerkant gecentreert, dat pas ik hiermee aan dat het in het midden is.*/
-  margin-left: 300px; /*Ik wil dat mijn tekst in het midden zit van de pagina dat doe ik hier mee.*/
 }
 .kopjes1{
   margin-top: 100px;/*Dit zorgt ervoor dat er om deze element blanko ruimte zit om het aantrekkelijker te maken is om naar te kijken.*/
@@ -24,7 +23,6 @@ body{
   border-radius: 20px; /*Ik wil geen rechte hoek punten, dus zorg ik ervoor met dit dat hij de hoeken wat ronder maakt.*/
   height: 20px;/*Dit zorgt ervoor dat hij niet te lang wordt en het er gek uit ziet, het bepaalt dus hoe lang hij in de lengte is.*/
   text-align: center;
-  opacity: 0.9;/*Dit doet bijna niets maar toch wel, ik vond de achtergrond kleur net te heftig maar hierdoor net wat minder omdat hij wat doorzichtiger wordt.*/
   cursor: pointer; /*Het is een link, en hier mee zorg ik ervoor dat de cursor anders wordt als je erover heen bewegt.*/
   text-decoration: none; /*Het is een link, maar linkjes hebben een streep eronder automatisch hierbij haal ik het weg.*/
   transition-duration: 0.4s;/*Het is een animatie dus het duurt 0.4 seconde voordat de animatie voorbij is.*/
@@ -48,7 +46,6 @@ position: static;
   border-radius: 20px;
   height: 20px;
   text-align: center;
-  opacity: 0.9;
   cursor: pointer;
   text-decoration: none;
   transition-duration: 0.4s;
@@ -64,7 +61,7 @@ position: static;
 }
 
 .kopjes3{
-  margin-top: 100px;
+  margin-top: 50px;
   font-size: 18px;
   margin-left: 140px;
   margin-right: 5px;
@@ -75,7 +72,6 @@ position: static;
   border-radius: 20px;
   height: 20px;
   text-align: center;
-  opacity: 0.9;
   cursor: pointer;
   text-decoration: none;
   transition-duration: 0.4s;
@@ -99,7 +95,6 @@ position: static;
   border-radius: 20px;
   height: 20px;
   text-align: center;
-  opacity: 0.9;
   cursor: pointer;
   text-decoration: none;
   transition-duration: 0.4s;
@@ -113,11 +108,11 @@ border: 4px solid #612B12;
 position: static;
 }
 .model {
+display: block; /*Dit zorgt ervoor dat ik de margin left en right kan gebruiken.*/
+margin-left: 1500px; /*Dit zorgt ervoor dat de afbeelding in het midden komt te staan.*/  
+margin-right: auto; /*Dit zorgt ervoor dat de afbeelding in het midden komt te staan.*/
 width: 200px;
 height: 500xpx;
-top: 150px;
-left: 1800px;
-position: fixed;
 
 }
 
@@ -275,6 +270,9 @@ li a::after { /* Het balkje onder de link */
 li a:hover::after {
   width: 100%;/* Bij hover groeit het balkje van links naar rechts */
 }
+li a.active::after {
+  width: 0%; /* Het balkje is weg als de link actief is */
+}
 
 iframe {
   margin-top: 150px;
@@ -298,4 +296,85 @@ iframe {
   height: auto;
   margin-top: 50px;
   margin-bottom: 50px;
+}
+footer {   
+  text-align: center;
+  padding: 15px;
+  background-color: #612B12;
+  color: white;
+  position: relative;
+  margin-top: 100px;
+
+}
+.home {   
+  text-align: center;
+  padding: 15px;
+  background-color: #612B12;
+  color: white;
+  position: relative;
+  margin-top: 718px;
+
+}
+@media (max-width: 768px) { /*Voor tablets en telefoons*/
+  .container { /*De container die ik heb gemaakt in de html.*/
+    flex-direction: column; /*Zodat de elementen onder elkaar komen te staan in plaats van naast elkaar.*/
+    align-items: center; /*Zodat de elementen in het midden komen te staan.*/
+  }
+  .tekstblok, .afbeeldingblok { /*De twee blokken die ik heb gemaakt in de html.*/
+    max-width: 90%; /*Zodat ze niet te breed worden op kleine schermen.*/
+    margin: 0 auto; /*Zodat ze in het midden komen te staan.*/
+  }
+}
+.knopjes {
+  margin-top: 50px;
+  font-size: 18px;
+  margin-left: 140px;
+  margin-right: 5px;
+  background-color: #612B12;
+  color: white;
+  padding: 15px;
+  width: 120px;
+  border-radius: 20px;
+  height: 20px;
+  transition-duration: 0.4s;
+  border: 4px solid #612B12;
+  text-align: center;
+
+}
+.knopjes:hover{
+  background-color:#E1CFB1;
+  color: rgb(0, 0, 0);
+  border: 4px solid #612B12;
+}
+.anders {
+display: block; 
+margin-left: 1500px;  
+margin-right: auto; 
+width: auto;
+height: auto;
+}
+.goede{
+  text-decoration: none;
+  color: white ;
+  background-color: #612B12;
+  padding: 15px;
+  border-radius: 20px;
+  height: 20px;
+  text-align: center;
+  transition-duration: 0.4s;
+  font-size: 100px;
+
+}
+.goede:hover{
+  background-color:#E1CFB1;
+  color: rgb(0, 0, 0);
+  border: 4px solid #612B12;
+
+}
+.geld {
+display: block;
+text-align: center;
+margin-top: 50px;
+margin-left: auto;
+margin-right: auto;
 }
