@@ -272,3 +272,18 @@ li a::after {
 li a:hover::after {
   width: 100%;
 }
+
+iframe {
+  margin-top: 150px;
+  margin-left: 300px;
+}
+.binairstelsel {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 160px;
+  height: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+
+}
