@@ -315,16 +315,7 @@ footer {
   margin-top: 718px;
 
 }
-@media (max-width: 768px) { /*Voor tablets en telefoons*/
-  .container { /*De container die ik heb gemaakt in de html.*/
-    flex-direction: column; /*Zodat de elementen onder elkaar komen te staan in plaats van naast elkaar.*/
-    align-items: center; /*Zodat de elementen in het midden komen te staan.*/
-  }
-  .tekstblok, .afbeeldingblok { /*De twee blokken die ik heb gemaakt in de html.*/
-    max-width: 90%; /*Zodat ze niet te breed worden op kleine schermen.*/
-    margin: 0 auto; /*Zodat ze in het midden komen te staan.*/
-  }
-}
+
 .knopjes {
   margin-top: 50px;
   font-size: 18px;
@@ -372,7 +363,7 @@ height: auto;
 
 }
 .geld {
-display: block;
+display: block; 
 text-align: center;
 margin-top: 50px;
 margin-left: auto;
