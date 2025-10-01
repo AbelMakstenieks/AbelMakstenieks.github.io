@@ -109,7 +109,7 @@ position: static;
 }
 .model {
 display: block; /*Dit zorgt ervoor dat ik de margin left en right kan gebruiken.*/
-margin-left: 1500px; /*Dit zorgt ervoor dat de afbeelding in het midden komt te staan.*/  
+margin-left: auto; /*Dit zorgt ervoor dat de afbeelding in het midden komt te staan.*/  
 margin-right: auto; /*Dit zorgt ervoor dat de afbeelding in het midden komt te staan.*/
 width: 200px;
 height: 500xpx;
