@@ -63,7 +63,7 @@ position: static;
 .kopjes3{
   margin-top: 50px;
   font-size: 18px;
-  margin-left: 140px;
+  margin-left: 160px;
   margin-right: 5px;
   background-color: #612B12;
   color: white;
@@ -304,7 +304,6 @@ footer {
   color: white;
   position: relative;
   margin-top: 100px;
-  height: auto;
 
 }
 .home {   
